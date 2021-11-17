@@ -1,0 +1,95 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Skeleton.gd" type="Script" id=1]
+[ext_resource path="res://Skeleton2.gd" type="Script" id=2]
+[ext_resource path="res://Skeleton3.gd" type="Script" id=3]
+[ext_resource path="res://Blender/RagDoll.dae" type="PackedScene" id=4]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.0
+height = 0.0
+
+[sub_resource type="CapsuleShape" id=2]
+radius = 0.0
+height = 0.0
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.0
+height = 0.0
+
+[sub_resource type="CapsuleShape" id=4]
+radius = 0.0
+height = 0.0
+
+[sub_resource type="CapsuleShape" id=5]
+radius = 0.0
+height = 0.0
+
+[sub_resource type="CapsuleShape" id=6]
+radius = 0.0
+height = 0.0
+
+[node name="RagDoll" instance=ExtResource( 4 )]
+
+[node name="Skeleton" parent="Armature" index="0"]
+script = ExtResource( 1 )
+
+[node name="Physical Bone Bone" type="PhysicalBone" parent="Armature/Skeleton" index="0"]
+bone_name = "Bone"
+
+[node name="CollisionShape" type="CollisionShape" parent="Armature/Skeleton/Physical Bone Bone" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Physical Bone Bone001" type="PhysicalBone" parent="Armature/Skeleton" index="1"]
+joint_type = 1
+bone_name = "Bone.001"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Armature/Skeleton/Physical Bone Bone001" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="Physical Bone Bone002" type="PhysicalBone" parent="Armature/Skeleton" index="2"]
+joint_type = 1
+bone_name = "Bone.002"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Armature/Skeleton/Physical Bone Bone002" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="Physical Bone Bone003" type="PhysicalBone" parent="Armature/Skeleton" index="3"]
+joint_type = 1
+bone_name = "Bone.003"
+joint_constraints/bias = 0.3
+joint_constraints/damping = 1.0
+joint_constraints/impulse_clamp = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Armature/Skeleton/Physical Bone Bone003" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="Skeleton2" parent="Armature" index="1"]
+script = ExtResource( 2 )
+
+[node name="Physical Bone Bone007" type="PhysicalBone" parent="Armature/Skeleton2" index="0"]
+bone_name = "Bone.007"
+
+[node name="CollisionShape" type="CollisionShape" parent="Armature/Skeleton2/Physical Bone Bone007" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 5 )
+
+[node name="Skeleton3" parent="Armature" index="2"]
+script = ExtResource( 3 )
+
+[node name="Physical Bone Bone008" type="PhysicalBone" parent="Armature/Skeleton3" index="0"]
+bone_name = "Bone.008"
+
+[node name="CollisionShape" type="CollisionShape" parent="Armature/Skeleton3/Physical Bone Bone008" index="0"]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0 )
+shape = SubResource( 6 )

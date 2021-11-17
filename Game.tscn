@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Blender/RagDoll.dae" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Rain.glb" type="PackedScene" id=4]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 25, 25 )
@@ -17,6 +19,7 @@ points = PoolVector3Array( 12.5, 0, 12.5, -12.5, 0, 12.5, 12.5, 0, -12.5, -12.5,
 [node name="Ground" type="StaticBody" parent="."]
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.100544, -0.0251322, -0.0067482 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
@@ -29,3 +32,9 @@ script = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.94177, 0.336257, 0, -0.336257, 0.94177, 0, 6.67416, 14.1352 )
+
+[node name="RagDoll2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.20015, 8.34042, -11.4366 )
+
+[node name="Rain" parent="." instance=ExtResource( 4 )]
+transform = Transform( -2.46739, 0, 0.402502, 0, 2.5, 0, -0.402502, 0, -2.46739, -8, 0, 0 )
